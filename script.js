@@ -1,47 +1,36 @@
-let a = 10;
-let b = 5;
+function myFunction()
+{ 
+    let name = document.getElementById("input_name");
+    let surname = document.getElementById("input_surname");
+    let age = document.getElementById("input_age")
+    let h1_name = document.getElementById("name")
 
+    h1_name.inneerText = "Hello, "+ name.value + " " + surname.value;
 
-console.log("Summas rezultāts: " + (a + b));
-console.log("Starpības rezultāts: " + (a - b));
-console.log("Reizinājuma rezultāts: " + (a * b));
-console.log("Dalījuma rezultāts: " + (a / b));
+    if ( name.value == "" || !name.value.match(/[A-z]/))
+    {
+        alert("Error: incorrect name!");
+    }
+    else
+    {
+        alert(name.value);
+    }
 
+    if ( surname.value == "" || !surname.value.match(/[A-z]!))
+    {
+        alert("Error: incorrect surname!");
+    }
+    alert(name.value + " is " + age.value + "y.o.");
 
-console.log("a pakāpē b: " + Math.pow(a, b));
-console.log("a dalījuma atlikums dalot ar b: " + (a % b));
-
-
-if (a > b) {
-    console.log("a ir lielāks par b");
-} else if (a == b) {
-    console.log("a ir vienāds ar b");
-} else if (b < a) {
-    console.log("b ir mazāks par a");
+    if (age.value <= 0 || age.value == "" || !age.value.match(/[9-0]/))
+    {
+        alert("Error: incorrect age!");
+    }
+    else
+    {
+        alert(name.value + " is " + age.value + "y.o.");
+    }
 }
 
 
-switch (true) {
-    case (a > b):
-        console.log("a ir lielāks par b");
-        break;
-    case (a == b):
-        console.log("a ir vienāds ar b");
-        break;
-    case (b < a):
-        console.log("b ir mazāks par a");
-        break;
-}
 
-
-let masivs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-
-
-for (let i = 0; i < masivs.length; i++) {
-    console.log("Masīva elements: " + masivs[i]);
-}
-
-
-for (let i = masivs.length - 1; i >= 0; i--) {
-    console.log("Masīva elements apgrieztā secībā: " + masivs[i]);
-}
